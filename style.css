@@ -27,6 +27,9 @@ header {
     align-items: center;
     margin-left:10px;
 }
+.logo h3{
+    font-size: medium;
+}
 
 .logo img {
     width: 80px;
