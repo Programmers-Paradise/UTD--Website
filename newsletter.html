@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+    
+}
+header, section, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left:10px;
+}
+.logo h3 {
+    font-size: medium;
+}
+
+.logo img {
+    width: 80px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.main-content h2 {
+    color: #060229;
+}
+
+.newsletter {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.newsletter h3 {
+    color: #0f0c9e;
+    margin: 0 0 10px 0;
+}
+
+.newsletter-content {
+    display: none;
+    padding-top: 10px;
+}
+
+.newsletter-content p {
+    margin: 0;
+}
+
+.newsletter-content .download {
+    margin-top: 5px;
+    color: #130b2e;
+    text-decoration: underline;
+}
+
+.newsletter-content .download:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.newsletter a {
+    text-decoration: none;
+    color: #070430;
+}
+
+.newsletter a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li><a href="Portfolio/index.html">Faculty</a></li>
+                <li><a href="https://csvtu.ac.in/ew/contact-us/">Contact Us</a></li>
+                <li><a href="menu.html" id="menu-link">Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+           <div class="main-content">
+            <h2>Newsletters of UTD</h2>
+            <div class="newsletter">
+                <h3>SET Newsletter- January to April 2021</h3>
+                <div class="newsletter-content">
+                    <p><a href="#">SET Newsletter- January to April 2021</a></p>
+                    <p class="download">30 Oct 2021</p>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter- Electronika January 2021</h3>
+                <div class="newsletter-content">
+                    <p><a href="#">Newsletter- Electronika January 2021</a></p>
+                    <p class="download">07 Oct 2021</p>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter 'WaveLength' August to October 2020</h3>
+                <div class="newsletter-content">
+                    <p><a href="#">Newsletter- Electronika January 2021</a></p>
+                    <p class="download">07 Oct 2021</p>
+                    <!-- Content here -->
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter 'WaveLength' Jan to May 2020</h3>
+                <div class="newsletter-content">
+                    <!-- Content here -->
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter 'WaveLength' May to September 2019</h3>
+                <div class="newsletter-content">
+                    <!-- Content here -->
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Newsletter 'WaveLength' Jan to May 2019</h3>
+                <div class="newsletter-content">
+                    <!-- Content here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const newsletters = document.querySelectorAll('.newsletter');
+
+    newsletters.forEach(newsletter => {
+        const header = newsletter.querySelector('h3');
+        header.addEventListener('click', function() {
+            const content = newsletter.querySelector('.newsletter-content');
+            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
