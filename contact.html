@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('images/hero.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.intro {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contact-group {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-group h2 {
+    text-align: center;
+    color: white;
+}
+
+.contact-section {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    color: black;
+}
+
+.contact-section:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-section h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .contact-group {
+        width: 90%;
+    }
+
+    .contact-section {
+        width: 100%;
+    }
+}
+
+</style>
+<body>
+    <main>
+        <section class="intro">
+            <h2>Welcome to Our University</h2>
+            <p>If you have any questions, feel free to reach out to the respective departments and higher officials listed below. We are here to help you with any inquiries you may have.</p>
+        </section>
+
+        <div class="contact-container">
+            <section class="contact-group" id="departments">
+                <h2>Departments</h2>
+                <div class="contact-section" id="admissions">
+                    <h3>Admissions Office</h3>
+                    <p>Email: admissions@university.edu</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+                <div class="contact-section" id="academics">
+                    <h3>Academics Office</h3>
+                    <p>Email: academics@university.edu</p>
+                    <p>Phone: (123) 456-7891</p>
+                </div>
+                <div class="contact-section" id="support">
+                    <h3>Student Support</h3>
+                    <p>Email: support@university.edu</p>
+                    <p>Phone: (123) 456-7892</p>
+                </div>
+                <div class="contact-section" id="it">
+                    <h3>IT Helpdesk</h3>
+                    <p>Email: ithelp@university.edu</p>
+                    <p>Phone: (123) 456-7893</p>
+                </div>
+                <div class="contact-section" id="finance">
+                    <h3>Finance Office</h3>
+                    <p>Email: finance@university.edu</p>
+                    <p>Phone: (123) 456-7894</p>
+                </div>
+            </section>
+
+            <section class="contact-group" id="officials">
+                <h2>Higher Officials</h2>
+                <div class="contact-section" id="dean">
+                    <h3>Dean</h3>
+                    <p>Email: dean@university.edu</p>
+                    <p>Phone: (123) 456-7895</p>
+                </div>
+                <div class="contact-section" id="registrar">
+                    <h3>Registrar</h3>
+                    <p>Email: registrar@university.edu</p>
+                    <p>Phone: (123) 456-7896</p>
+                </div>
+                <div class="contact-section" id="chancellor">
+                    <h3>Chancellor</h3>
+                    <p>Email: chancellor@university.edu</p>
+                    <p>Phone: (123) 456-7897</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.contact-section');
+    
+    sections.forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            section.style.transform = 'scale(1.05)';
+            section.style.background = 'rgba(255, 255, 255, 0.9)';
+        });
+        
+        section.addEventListener('mouseleave', () => {
+            section.style.transform = 'scale(1)';
+            section.style.background = 'rgba(255, 255, 255, 0.8)';
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
