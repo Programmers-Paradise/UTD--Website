@@ -34,6 +34,9 @@ header {
     align-items: center;
     margin-left:10px;
 }
+.logo h3 {
+    font-size: medium;
+}
 
 .logo img {
     width: 80px;
@@ -136,7 +139,7 @@ nav ul li a:hover::after {
 }
 
 .header-image:hover {
-    transform: scale(1.1); /* Scale the image on hover */
+    transform: scale(1.015); /* Scale the image on hover */
 }
 
 /* Keyframes for sliding in from the right */
@@ -163,6 +166,11 @@ main {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     overflow: hidden;
     margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.course-info:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
 }
 
 .image-container {
@@ -172,12 +180,12 @@ main {
 .image-container img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */
 }
 
-.image-container img:hover {
+/* .image-container img:hover {
     transform: scale(1.05);
-}
+} */
 
 .course-details {
     flex: 1;
@@ -249,6 +257,11 @@ main {
     margin-top: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.peos:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
 }
 
 .peos-content {
@@ -296,7 +309,13 @@ main {
     margin-top: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
 }
+.programme-outcome:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
 
 .programme-outcome h2 {
     font-size: 24px;
@@ -480,6 +499,9 @@ footer .social-media a img {
 footer p {
     margin-top: 10px;
 }
+
+
+
 
 </style>
 <body>
