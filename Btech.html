@@ -524,10 +524,27 @@ main {
 .fee-table table tbody tr:nth-child(even) {
     background-color: #f9f9f9; /* Alternate row background */
 }
+.view-btn {
+    background-color: #011731;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
 
 .note {
     margin-top: 20px;
     font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
 }
 .key-features {
     text-align: center;
@@ -934,8 +951,9 @@ footer p {
                         
                         </tbody>
                         </table>
-                        </div>
-                        <div class="fee-table">
+                        <button class="view-btn" onclick="toggleFeeTable()">View Fee Structure of 2nd to 8th Semester</button>
+                    </div>
+                    <div class="fee-table" id="second-semester-fees" style="display: none;">
                         <table>
                             <thead>
                                 <tr>
@@ -981,8 +999,10 @@ footer p {
                         <!-- Add more rows as needed for other semesters -->
                     </tbody>
                 </table>
-            </div>
+            
             <p class="note"><strong>NOTE:</strong> From 2nd semester to 8th semester fee will be the same. The fees mentioned above are approximate figures and are subject to change.</p>
+            </div>
+            
         </section>
         <section class="key-features">
             <h2>KEY FEATURES</h2>
@@ -1030,6 +1050,14 @@ footer p {
 document.addEventListener('DOMContentLoaded', (event) => {
     showSyllabus('first-year');
 });
+function toggleFeeTable() {
+    var secondSemesterFees = document.getElementById("second-semester-fees");
+    if (secondSemesterFees.style.display === "none") {
+        secondSemesterFees.style.display = "block";
+    } else {
+        secondSemesterFees.style.display = "none";
+    }
+}
 
     </script>
 </body>
