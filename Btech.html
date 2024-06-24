@@ -207,6 +207,7 @@ main {
     font-weight: bold;
 }
 
+
 .specializations {
     text-align: center;
     width: 100%;
@@ -385,7 +386,7 @@ main {
 }
 
 .curriculum h2 {
-    font-size: 35px;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
@@ -400,8 +401,8 @@ main {
     background-color: #011731;
     color: white;
     border: solid;
-    padding: 10px 20px;
-    font-size: 25px;
+    padding: 7px 15px;
+    font-size: 22px;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -417,11 +418,11 @@ main {
 }
 
 .syllabus h3 {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 .syllabus h4 {
-    font-size: 27px;
+    font-size: 24px;
     margin-bottom: -70px;
     text-align: center;
 }
@@ -438,7 +439,7 @@ main {
 }
 
 .syllabus li {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 .download-btn {
@@ -450,10 +451,15 @@ main {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .download-btn:hover {
     background-color: #0056b3;
+}
+.scheme {
+    margin-top: 20px;
+    font-style: italic;
 }
 
 .eligibility-criteria {
@@ -493,6 +499,7 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     overflow-x: auto; /* Enable horizontal scroll for smaller screens */
+    padding-bottom: 25px;
 }
 
 .fee-table table {
@@ -506,11 +513,11 @@ main {
 .fee-table table td {
     padding: 12px;
     text-align: center;
-    border: 1px solid #ddd; /* Light gray border */
+    border: 1.5px solid #ddd; /* Light gray border */
 }
 
 .fee-table table thead {
-    background-color: #011731; /* Red background for table header */
+    background-color: #011731; /* Dark blue background for table header */
     color: white;
 }
 
@@ -522,6 +529,39 @@ main {
     margin-top: 20px;
     font-style: italic;
 }
+.key-features {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.key-features:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.key-features h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.key-features ul {
+    list-style:decimal;
+    padding: 0;
+}
+
+.key-features li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 footer {
     background: #011731;
     color: #fff;
@@ -589,6 +629,11 @@ footer p {
                 <p>
                     The Department of Computer Science and Engineering offers B.Tech(Hons.) in Artificial Intelligence and Data Science for the students to grasp enriched knowledge in related industries driven curriculum. The major focus of this course is to nurture and sharpen students Technical skills with project based learning. Recurrent interactions with renowned experts of the fields and esteemed companies help the students to gain in-depth practical knowledge.
                 </p>
+                <p style="font-weight: bold;">University is commencing B.Tech (Honours) from 2020-21. The nomenclature of the degree are as follows:</p>
+                <ul>
+                    <li>B.Tech (Honours) in Computer Science Engineering (Artificial Intelligence) – 90 Seats</li>
+                    <li>B.Tech (Honours) in Computer Science Engineering (Data Science) – 90 Seats</li>
+                </ul>
             </div>
         </section>
         <section class="specializations">
@@ -601,7 +646,7 @@ footer p {
                 
                 <div class="specialization">
                     <img src="images/AI.webp" alt="Specialization in AI & Machine Learning">
-                    <p>Specialization in AI </p>
+                    <p>Specialization in Artificial Intelligence</p>
                 </div>
             </div>
         </section>
@@ -631,15 +676,17 @@ footer p {
             <h2>PROGRAMME OUTCOME</h2>
             <ul>
                 <li>Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
-                <li>Creating technical leaders who are also aware of professional ethics</li>
-                <li>Solving significant real life problems across a broad range that benefits the students to create successful careers in industry, academia, and public service</li>
-                <li>Ability to apply knowledge of mathematics, science and engineering fundamentals to the solution of complex engineering problems.</li>
-                <li>Able to identify, formulate and analyze complex engineering problems to obtain valid conclusions using principles of mathematics, natural sciences and engineering sciences.</li>
-                <li>Ability to design solutions of complex engineering problems as well as can design system processes that meet the specified needs with the appropriate consideration for societal and environmental considerations.</li>
-                <li>Able to use research-based knowledge and research methods including design, analysis and interpretation of data to provide valid conclusions.</li>
-                <li>Able to use modern IT tools to complex engineering activities with an understanding of the limitations.</li>
-                <li>Understanding of the social, cultural, global and environmental responsibilities of a professional engineer.</li>
-                <li>Understanding of impact of professional engineering solutions in societal and environmental contexts and demonstrate the knowledge of and need for sustainable development.</li>
+                <li>Problem analysis: Identify, formulate, research literature, and analyse complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
+                <li>Design/Development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
+                <li>Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
+                <li>Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
+                <li>The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
+                <li>Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
+                <li>Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
+                <li>Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
+                <li>Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
+                <li>Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
+                <li>Competitive Skills: Ability to compete in national and international technical events and building the competitive spirit.</li>
             </ul>
         </section>
         <section class="programme-sf">
@@ -654,7 +701,7 @@ footer p {
                 <li>Curriculum is equipped with 21st century digital technologies for web designing, networking, mobile phone app development, data analytics, and data bases.</li>
                 <li>Curriculum of the course is competent to impart skills as benchmarked by Wipro Talent++, Infosys Campus Connect, HCL K2 with option to undergo Industrial Certifications and Online Courses.</li>
                 <li>Curriculum of the course is competent to impart skills as per feedback provided by premier organizations of industry and academia.</li>
-                <li>: Usage of demo kits in addition to animations, simulations, audio-visual aids, demonstrations provide interactive teaching methodology.</li>
+                <li>Usage of demo kits in addition to animations, simulations, audio-visual aids, demonstrations provide interactive teaching methodology.</li>
                 <li>Participation in technical events, sports and cultural activities help in the holistic development of students.</li>
             </ul>
         </section>
@@ -810,6 +857,10 @@ footer p {
                     </ul>
                 </div>
             </div>
+            <p class="scheme"><strong>B.Tech in Computer Science & Engineering (Artificial Intelligence) 
+                Scheme: </strong> <a href="Scheme/AI SCHEME.pdf" class="download-btn" target="_blank">View PDF</a></p>
+            <p class="scheme"><strong>B.Tech in Computer Science & Engineering (Data Science)
+                Scheme: </strong> <a href="Scheme/DS SCHEME.pdf" class="download-btn" target="_blank">View PDF</a></p>
         </section>
         <section class="eligibility-criteria">
             <h2>ELIGIBILITY CRITERIA</h2>
@@ -821,31 +872,132 @@ footer p {
                 <table>
                     <thead>
                         <tr>
-                            <th>Semeter</th>
-                            <th>Tuition Fee (per annum)</th>
-                            <th>Development Fee</th>
-                            <th>Training and Placement</th>
+                            <th>Semester</th>
+                            <th>Description</th>
+                            <th>Amount (INR)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1st Semester</td>
+                            <td rowspan="13" style="font-weight: bold;">1st Semester</td>
+                            <td>Tuition Fee</td>
                             <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
                             <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
                             <td>700.00</td>
                         </tr>
                         <tr>
-                            <td>2nd Year</td>
-                            <td>$10,500</td>
-                            <td>$2,200</td>
-                            <td>$12,700</td>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
                         </tr>
-                        <!-- Add more rows as needed -->
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Caution Money</td>
+                            <td>3,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Enrolment Fee</td>
+                            <td>2,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Identity Card</td>
+                            <td>300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grand Total</strong></td>
+                            <td><strong>57,563.00</strong></td>
+                        </tr>
+                        
+                        </tbody>
+                        </table>
+                        </div>
+                        <div class="fee-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>Description</th>
+                                    <th>Amount (INR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <tr>
+                            <td rowspan="8" style="font-weight: bold;">2nd Semester</td>
+                            <td>Tuition Fee</td>
+                            <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
+                            <td>700.00</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <!-- Add more rows as needed for other semesters -->
                     </tbody>
                 </table>
             </div>
-            <p class="note"><strong>NOTE:</strong> The fees mentioned above are approximate figures and are subject to change.</p>
+            <p class="note"><strong>NOTE:</strong> From 2nd semester to 8th semester fee will be the same. The fees mentioned above are approximate figures and are subject to change.</p>
         </section>
+        <section class="key-features">
+            <h2>KEY FEATURES</h2>
+            <ul>
+                <li>Real Life Industry Projects</li>
+                <li>Personalised Mentorship & Doubt-Solving Support</li>
+                <li>Specialisation Certificates</li>
+                <li>Making Students Industry Ready</li>
+                <li>Complimentary Python Programming Bootcamp</li>
+                <li>One-on-One with Industry Mentors</li>
+                <li>Career Essential Soft Skills Program</li>
+                <li>Job Assistance with Top Firms</li>
+            </ul>
+        </section>
+        
         <footer>
             <div class="footer-content">
                 <div class="footer-links">
