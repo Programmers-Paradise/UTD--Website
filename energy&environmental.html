@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B. Tech | Computer Science & Engineering</title>
+    <link rel="stylesheet" href="Btech.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left:10px;
+}
+.logo h3 {
+    font-size: medium;
+}
+
+.logo img {
+    width: 80px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    max-width:  100%;
+    height: 500px;
+    overflow: hidden;
+   
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero:hover .hero-image {
+    transform: scale(1.05);
+    transition: transform 3s ease;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ece7e7;
+    padding: 20px;
+    border-radius: 5px;
+    
+    
+}
+
+.hero-text h4 {
+    margin: 0;
+    
+    color: #ffffff;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    color: #fffcfc;
+}
+.header-image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 20px auto; /* Adjust margin as needed */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    animation: slideInRight 1s forwards; /* Animation declaration */
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.015); /* Scale the image on hover */
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-info {
+    display: flex;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.course-info:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* transition: transform 0.3s ease; */
+}
+
+/* .image-container img:hover {
+    transform: scale(1.05);
+} */
+
+.course-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.course-details h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.course-details p:first-of-type {
+    font-weight: bold;
+}
+
+
+.specializations {
+    text-align: center;
+    width: 100%;
+}
+
+.specializations h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.specialization-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.specialization {
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.specialization img {
+    width: 100%;
+    height: 300px;
+}
+
+.specialization p {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.specialization:hover {
+    transform: scale(1.05);
+}
+
+.peos {
+    display: flex;
+    align-items: center;
+    background-color: #0c2035;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.peos:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.peos-content {
+    flex: 1;
+    color: white;
+}
+
+.peos-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.peos-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.peos-content li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.peos-content .checkmark {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.peos-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.peos-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.programme-outcome {
+    background-color: #0c3f75;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.programme-outcome:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.programme-outcome h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-outcome ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-outcome li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-outcome li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+.programme-sf {
+    background-color: #0c2035;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.programme-sf h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-sf ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-sf li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-sf li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.curriculum {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.curriculum h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.year-buttons {
+   
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.year-buttons button {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 7px 15px;
+    font-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.year-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.syllabus {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.syllabus h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.syllabus h4 {
+    font-size: 24px;
+    margin-bottom: -70px;
+    text-align: center;
+}
+
+.semesters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+}
+
+.syllabus ul {
+    list-style: none;
+    padding: 80px;
+}
+
+.syllabus li {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.download-btn {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+.scheme {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.eligibility-criteria {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.eligibility-criteria h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.eligibility-criteria p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.fee-structure {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.fee-structure h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.fee-table {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; /* Enable horizontal scroll for smaller screens */
+    padding-bottom: 25px;
+}
+
+.fee-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fee-table table th,
+.fee-table table td {
+    padding: 12px;
+    text-align: center;
+    border: 1.5px solid #ddd; /* Light gray border */
+}
+
+.fee-table table thead {
+    background-color: #011731; /* Dark blue background for table header */
+    color: white;
+}
+
+.fee-table table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background */
+}
+.view-btn {
+    background-color: #011731;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
+}
+.key-features {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.key-features:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.key-features h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.key-features ul {
+    list-style:decimal;
+    padding: 0;
+}
+
+.key-features li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+footer {
+    background: #011731;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .social-media a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li><a href="Portfolio/index.html">Faculty</a></li>
+                <li><a href="https://csvtu.ac.in/ew/contact-us/">Contact Us</a></li>
+                <li><a href="menu.html" id="menu-link">Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="header-image-container">
+        <img src="images/BTech.png" alt="Image" class="header-image">
+        
+    </div>
+    <main>
+        <section class="course-info">
+            <div class="image-container">
+                <img src="images/Btech.webp" alt="Laptop">
+            </div>
+            <div class="course-details">
+                <h3>M.Tech | Energy and Environmental Engineering</h3>
+                <p>DURATION : 2 YRS. (4 SEMESTERS)</p>
+                <p>
+                    Department of Energy and Environmental Engineering has been established at the University Teaching Department, CSVTU, Bhilai since June 2016. The Department offers PG programme (M.Tech.) in Energy and Environmental Engineering. The department believes in imparting quality education to the students, interaction with eminent personalities and academicians from prestigious Institutions/industries.
+The major task of the Department is to develop comprehensive innovative solutions to various energy and environmental challenges by undertaking Environmental and Energy leadership projects. This involves promoting energy efficiency and the adoption of renewable energy sources like Solar, Wind, Geothermal, Small Hydro, and Biomass etc. to meet energy requirements and to consider various renewable energy policies at the local, regional, and national levels. The department is actively engaged in different energy and environmental engineering research areas pertaining to solar energy and environmental engineering.
+                </p>
+                <p style="font-weight: bold;">University is commencing M.Tech from 2020-21. The nomenclature of the degree are as follows:</p>
+                <ul>
+                    <li>M.Tech in Energy and Environmental Engineering – 18 Seats</li>
+                </ul>
+            </div>
+        </section>
+        <section class="objectives">
+            <div class="programme-sf">
+            
+                <h4>Objectives of the Department: </h4>
+                <ul>
+                    <span class="checkmark">✔</span>
+                    To develop sustainable infrastructure by providing solutions to acute problems in energy security
+                    <br>
+                    <span class="checkmark">✔</span>
+                    To integrate the efforts of scientists and engineers working with different aspects of green energy
+                    <br>
+                    <span class="checkmark">✔</span>
+                    To provide quality education through regular educational programs (such as M.Tech., Ph.D.) and for providing trained manpower to industry in the area of green energy and energy efficiency.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    To produce highly trained technical manpower to meet the Global Climate and Energy Security challenges & to undertake R&D projects and Policy Research Issues to achieve at domestic and commercial environment.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    To contribute to grass-root level research and deployment in the field of energy and environment.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    The department aims at providing quality postgraduate education to meritorious undergraduates with keen interest in both the fields of green energy and energy efficiency.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    Energy department is proposed to closely associate with industry and several national & foreign academic institutions of repute with an aim to foster cutting edge research and establish ourselves as a leader in this field.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    To strengthen and rationalise the research, demonstration and development efforts in all green energy technologies & to provide Auditors/ Managers/Consultants for Energy and Environment.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    Energy department is dedicated to accelerate the deployment of renewable energy and low carbon generation technology through the utilization of Biomass, Wind, Hydro Power, Solar PV and Solar Thermal energy.
+                    <br>
+                    <span class="checkmark">✔</span>
+                    By the objectives and goals described above, it is believed that Energy Department achievement would lead to “Green Energy for Green Campus”.
+                    <br>
+                    <p>“With these objectives, in mind Energy Department could contribute significantly in making India a world leader in this area and make a social impact as well.”</p>
+                </ul>
+        </section>
+        <section class="VISION AND MISSION">
+            <div class="programme-sf">
+                
+                <h2>VISION</h2>
+            
+                <ul>
+                    <p>The vision of the department is “To develop successful academic research community in the area of sustainable and green technology for a better tomorrow”.</p>
+                </ul>
+            </div>
+            
+            <div class ="programme-sf">
+                <h2>MISSION</h2>
+                <ul>
+                    <p>The research mission of the Energy Department is to:</p>
+                    •	Contribute to the development of next generations of highly qualified and ethical professionals through specialized training and knowledge build-up in areas of green technology and renewable energy.
+                    <br>
+•	Promote the vision of the department among academic, industrial, and public sectors through demonstration and dissemination of green technology projects and create environment.
+<br>
+•	Develop eco-friendly sustainable technologies to ensure the energy security of the country and the world.
+<br>
+•	Partner with industry, research organizations and government in India and abroad for the commercialization of research ideas.
+<br>
+•	Improve the quality of life of citizens of India, conserving natural resources, and serve as an engine for socio economic and sustainable development.
+<br>
+•	Promote and establish a clear pathway to make CSVTU a green campus within the next ten years and to propagate green campus ideas and methodologies
+
+                </ul>
+            </div>
+            
+        </section>
+        <section class="programme-sf">
+            <h2>Programme Outcomes</h2>
+            <p>Students will acquire fundamental knowledge in energy principles, technologies and environmental sciences, as well as the ability to facilitate solutions to problems related to energy technologies, environmental engineering, New and renewable energy resources, energy efficient buildings, etc., that contribute to the well-being of our environment and society.</p>
+        </section>
+        <section class="programme-sf">
+            <h2>Career Prospects</h2>
+            <p>The knowledge and skills gained by students of the Programme will afford them strong career prospects. They will find employability in current and emerging areas of energy systems, environmental monitoring and control, sensor instrumentation, and smart and green building technologies, among others. They can land jobs in Government, electric companies and power grid enterprises, building and construction industries, consulting firms and green groups, renewable technology companies, and vehicle industries, to cite just some of the possibilities. They can also pursue doctorate studies in their specialized areas of interest in India or overseas. <br>
+                Solar energy companies of India <br>
+                Astonfield, Azure Power, Hindustan Power, Indosolar, ReNew Power, SELCO India, Solairedirect, Solar Energy Corporation of India, Su-Kam Power Systems, Suzlon, Tata Power Solar, Vikram Solar, Vivaan Solar. <br>
+                Wind power companies of India <br>
+                ReNew Power, Suzlon.</p>
+        </section>
+        <section class="curriculum">
+            <h2>CURRICULUM</h2>
+            <div class="year-buttons">
+                <button onclick="showSyllabus('first-year')">1st Year</button>
+                <button onclick="showSyllabus('second-year')">2nd Year</button>
+                <button onclick="showSyllabus('third-year')">3rd Year</button>
+                <button onclick="showSyllabus('fourth-year')">4th Year</button>
+            </div>
+            <div class="syllabus" id="first-year">
+                <h3>1st Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>1st Semester</strong> <a href="Syllabus/1st sem Syllabuss of Data Science and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Engineering Mathematics-I</li>
+                        <li>Learning Programming Concept with C</li>
+                        <li> Fundamentals of Computational Biology </li>
+                        <li>Environmental Science</li>
+                        <li>Professional Ethics and Life Skills</li>
+                        <li>Language & Writing Skills</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>2nd Semester</strong> <a href="Syllabus/2nd Sem Syllabus of Ds and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li> Engineering Mathematics-II</li>
+                        <li>Data Structure Using C</li>
+                        <li>Object Oriented Programming</li>
+                        <li>Digital Logic & Design</li>
+                        <li>Python for Data Science</li>
+                        <li>Entrepreneurship</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="second-year" style="display:none;">
+                <h3>2nd Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>3rd Semester</strong> <a href="Syllabus/3rd sem syllabus of DS and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Probability and Statistics</li>
+                        <li>Analysis and Design of Algorithm</li>
+                        <li>Computer Organisation and Architecture</li>
+                        <li>Discrete Structure</li>
+                        <li>Database Management System</li>
+                       
+                    </ul>
+                    <ul>
+                        <li><strong>4th Semester</strong> <a href="Syllabus/4th Sem syllabus of DS and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Computer Network</li>
+                        <li>Artificial Intelligence: Principles & Applications</li>
+                        <li>Operating System</li>
+                        <li>Theory of Computation</li>
+                        <li>R for Data Science</li>
+                        <li>Data Visualisation</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="third-year" style="display:none;">
+                <h3>3rd Year</h3>
+                <h4>Artificial Intelligence</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>5th Semester</strong> <a href="Syllabus/5th sem syllabus of AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Predictive Modelling And Analytics</li>
+                        <li>Cryptography And Network Security</li>
+                        <li>Artificial Neural Networks</li>
+                        <li>Advanced Computer Network</li>
+                        <li>Computational Complexity</li>
+                        <li>Distributed Computing</li>
+                        
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>6th Semester</strong> <a href="path/to/6th_semester_ai.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Mobile Computing</li>
+                        <li>Distributed Systems</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+                <h4>Data Science</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>5th Semester</strong> <a href="Syllabus/5th sem syllabus of DS.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Pattern Recognition And Machine Learning</li>
+                        <li>Intelligent Data Analysis</li>
+                        <li>Cryptography And Network Security</li>
+                        <li>Natural Language Processing</li>
+                        <li>Advanced Computer Network</li>
+                        <li>Computational Complexity</li>
+                        <li>Distributed Computing</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>6th Semester</strong> <a href="path/to/6th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Data Visualization</li>
+                        <li>Cloud Computing</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="fourth-year" style="display:none;">
+                <h3>4th Year</h3>
+                <h4>Artificial Intelligence</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>7th Semester</strong> <a href="path/to/7th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Artificial Intelligence</li>
+                        <li>Compiler Design</li>
+                        <li>Web Technologies</li>
+                        <li>Elective-I</li>
+                        <li>Elective-II</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>8th Semester</strong> <a href="path/to/8th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Mobile Computing</li>
+                        <li>Distributed Systems</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+                <h4>Data Science</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>7th Semester</strong></li>
+                        <li>Data Mining</li>
+                        <li>Big Data Analytics</li>
+                        <li>Web Technologies</li>
+                        <li>Elective-I</li>
+                        <li>Elective-II</li>
+                        <li><a href="pdfs/3rd_year_AI_5th_semester.pdf" class="download-button" download>Download</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>8th Semester</strong></li>
+                        <li>Machine Learning</li>
+                        <li>Data Visualization</li>
+                        <li>Cloud Computing</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        <li><a href="pdfs/3rd_year_AI_5th_semester.pdf" class="download-button" download>Download</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="scheme"><strong>B.Tech in Computer Science & Engineering (Artificial Intelligence) 
+                Scheme: </strong> <a href="Scheme/AI SCHEME.pdf" class="download-btn" target="_blank">View PDF</a></p>
+            <p class="scheme"><strong>B.Tech in Computer Science & Engineering (Data Science)
+                Scheme: </strong> <a href="Scheme/DS SCHEME.pdf" class="download-btn" target="_blank">View PDF</a></p>
+        </section>
+        <section class="eligibility-criteria">
+            <h2>ELIGIBILITY CRITERIA</h2>
+            <p>Duration: 4 yrs. The Candidates should have passed Senior Secondary (10+2) or an equivalent Examination in five subjects taken together including compulsory subjects of Physics, Mathematics and one subject of Chemistry/ Biotechnology/ Biology/ Computer Science & English with 60% marks in aggregate (40% marks in the case of SC/ ST Category). Or Passed Diploma examination with at least 60% marks (40% in case of candidates belonging to reserved category), subject to vacancies in the First Year, in case the vacancies at lateral entry are exhausted.</p>
+        </section>
+        <section class="fee-structure">
+            <h2>FEE STRUCTURE</h2>
+            <div class="fee-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Semester</th>
+                            <th>Description</th>
+                            <th>Amount (INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="13" style="font-weight: bold;">1st Semester</td>
+                            <td>Tuition Fee</td>
+                            <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
+                            <td>700.00</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Caution Money</td>
+                            <td>3,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Enrolment Fee</td>
+                            <td>2,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Identity Card</td>
+                            <td>300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grand Total</strong></td>
+                            <td><strong>57,563.00</strong></td>
+                        </tr>
+                        
+                        </tbody>
+                        </table>
+                        <button class="view-btn" onclick="toggleFeeTable()">View Fee Structure of 2nd to 8th Semester</button>
+                    </div>
+                    <div class="fee-table" id="second-semester-fees" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>Description</th>
+                                    <th>Amount (INR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <tr>
+                            <td rowspan="8" style="font-weight: bold;">2nd Semester</td>
+                            <td>Tuition Fee</td>
+                            <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
+                            <td>700.00</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <!-- Add more rows as needed for other semesters -->
+                    </tbody>
+                </table>
+            
+            <p class="note"><strong>NOTE:</strong> From 2nd semester to 8th semester fee will be the same. The fees mentioned above are approximate figures and are subject to change.</p>
+            </div>
+            
+        </section>
+        <section class="key-features">
+            <h2>KEY FEATURES</h2>
+            <ul>
+                <li>Real Life Industry Projects</li>
+                <li>Personalised Mentorship & Doubt-Solving Support</li>
+                <li>Specialisation Certificates</li>
+                <li>Making Students Industry Ready</li>
+                <li>Complimentary Python Programming Bootcamp</li>
+                <li>One-on-One with Industry Mentors</li>
+                <li>Career Essential Soft Skills Program</li>
+                <li>Job Assistance with Top Firms</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                    <br>
+                    <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                    <br>
+                    <a href="#"><img src="images/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+            <p>Contact us at enquiry@csvtu.ac.in</p>
+        </footer>
+    
+    </main>
+    <script>
+        function showSyllabus(year) {
+    const years = ['first-year', 'second-year', 'third-year', 'fourth-year'];
+    years.forEach(y => {
+        document.getElementById(y).style.display = 'none';
+    });
+    document.getElementById(year).style.display = 'block';
+}
+
+// Display the first year syllabus by default
+document.addEventListener('DOMContentLoaded', (event) => {
+    showSyllabus('first-year');
+});
+function toggleFeeTable() {
+    var secondSemesterFees = document.getElementById("second-semester-fees");
+    if (secondSemesterFees.style.display === "none") {
+        secondSemesterFees.style.display = "block";
+    } else {
+        secondSemesterFees.style.display = "none";
+    }
+}
+
+    </script>
+</body>
+</html>
