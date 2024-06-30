@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculties</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Additional styles for faculty cards and view more button */
+        .faculty-section {
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .faculty-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #010314;
+        }
+
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .faculty-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .faculty-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #011731;
+            padding-bottom: 10px;
+        }
+
+        .faculty-card p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .view-more-btn {
+            background-color: #011731;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .view-more-btn:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Your header content -->
+    </header>
+
+    <!-- Faculty sections with view more buttons -->
+    <section class="faculty-section">
+        <h1>Diploma in Mining Engneering</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="faculty1.jpg" alt="Dr. John Doe">
+                <h3>Dr. John Doe</h3>
+                <p>Professor of Computer Science</p>
+                <p>Expert in Artificial Intelligence and Machine Learning.</p>
+            </div>
+            <div class="faculty-card">
+                <img src="faculty2.jpg" alt="Dr. Jane Smith">
+                <h3>Dr. Jane Smith</h3>
+                <p>Associate Professor of Physics</p>
+                <p>Researcher in Quantum Mechanics and Particle Physics.</p>
+            </div>
+            <div class="faculty-card">
+                <img src="faculty2.jpg" alt="Dr. Jane Smith">
+                <h3>Dr. Jane Smith</h3>
+                <p>Associate Professor of Physics</p>
+                <p>Researcher in Quantum Mechanics and Particle Physics.</p>
+            </div>
+            <div class="faculty-card">
+                <img src="faculty2.jpg" alt="Dr. Jane Smith">
+                <h3>Dr. Jane Smith</h3>
+                <p>Associate Professor of Physics</p>
+                <p>Researcher in Quantum Mechanics and Particle Physics.</p>
+            </div>
+
+            <div class="faculty-card">
+                <img src="faculty2.jpg" alt="Dr. Jane Smith">
+                <h3>Dr. Jane Smith</h3>
+                <p>Associate Professor of Physics</p>
+                <p>Researcher in Quantum Mechanics and Particle Physics.</p>
+            </div>
+        </div>
+        <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+    </section>
+
+    <section class="faculty-section">
+        <h1>Diploma in Industrial and Fire Safty Engneering</h1>
+        <div class="faculty-container" id="diploma-faculty-container">
+            <!-- Diploma Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="faculty3.jpg" alt="Dr. Mark Brown">
+                <h3>Dr. Mark Brown</h3>
+                <p>Lecturer in Electrical Engineering</p>
+                <p>Specialist in Power Systems and Renewable Energy.</p>
+            </div>
+            <div class="faculty-card">
+                <img src="faculty4.jpg" alt="Dr. Anna White">
+                <h3>Dr. Anna White</h3>
+                <p>Assistant Professor of Mechanical Engineering</p>
+                <p>Focus on Thermodynamics and Fluid Mechanics.</p>
+            </div>
+        </div>
+        <button class="view-more-btn" id="diploma-view-more-btn">View More</button>
+    </section>
+
+    <script>
+        // JavaScript logic for "View More" button
+        const facultiesPerPage = 4;
+
+        function handleViewMore(section) {
+            const container = document.getElementById(`${section}-faculty-container`);
+            const facultyCards = container.querySelectorAll('.faculty-card');
+            const viewMoreBtn = document.getElementById(`${section}-view-more-btn`);
+
+            let visibleCount = facultiesPerPage;
+            facultyCards.forEach((card, index) => {
+                if (index < visibleCount) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            viewMoreBtn.addEventListener('click', () => {
+                visibleCount += facultiesPerPage;
+                facultyCards.forEach((card, index) => {
+                    if (index < visibleCount) {
+                        card.style.display = 'block';
+                    }
+
+                    if (visibleCount >= facultyCards.length) {
+                        viewMoreBtn.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initial setup
+            if (facultyCards.length <= facultiesPerPage) {
+                viewMoreBtn.style.display = 'none';
+            }
+        }
+
+        handleViewMore('btech');
+        handleViewMore('diploma');
+        // Add more sections as needed
+
+    </script>
+</body>
+</html>
