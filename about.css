@@ -11,6 +11,7 @@ header, section, footer {
 }
 
 header {
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,25 +35,74 @@ header {
     height: 70px;
     margin-right: 10px;
 }
-
-nav ul {
-    list-style: none;
-    display: flex;
+/* Reset some default browser styles */
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    margin: 0 50px;
+/* Flexbox container for horizontal alignment */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    /* border-bottom: 1px solid #ccc; */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+/* Style each list item */
+nav ul li {
     position: relative;
 }
 
+/* Style for navigation links */
+nav ul li a {
+    display: block;
+    padding: 15px 40px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+    background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add some hover effects for main navigation links */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -68,7 +118,6 @@ nav ul li a::after {
 nav ul li a:hover::after {
     transform: scaleX(1);
 }
-
 .hero {
     position: relative;
     width: 100%;
