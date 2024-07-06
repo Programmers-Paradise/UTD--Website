@@ -539,20 +539,24 @@ section {
 }
 
 
-.csvtu-stories {
+.csvtu-stories, .csvtu-achievements {
     padding: 20px;
-    background-color: #e9e9e9e5;
-    transition: transform 0.3s, background-color 0.3s;
-}
-.csvtu-stories:hover {
-    background-color: #e9e9e9e5;
-    transform: scale(1.015);
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #f3f3f3, #e9e9e9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-.acsvtu-stories h2 {
+.csvtu-stories:hover, .csvtu-achievements:hover {
+    transform: scale(1.02);
+}
+
+.csvtu-stories h2, .csvtu-achievements h2 {
     text-align: center;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .story-grid {
@@ -564,34 +568,60 @@ section {
 .story {
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 10px;
     padding: 10px;
-    width: 30%;
+    width: 22%;
+    height: 250px; /* Maintain square shape */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .story img {
     width: 100%;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
 }
 
 .story h3 {
-    margin: 0;
+    margin: 10px 0;
     font-size: 1.2em;
     color: #011731;
-    padding-bottom: 15px;
 }
 
 .story p {
     color: #555;
+    margin: 5px 0;
 }
 
 .story:hover {
     transform: translateY(-5px);
 }
+
+/* Update view-more styling to handle links */
+.view-more {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #011731;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view-more:hover {
+    background-color: #004c9b;
+}
+
 #testimonials .testimonial {
     margin-bottom: 20px;
     padding: 20px;

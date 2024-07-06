@@ -383,6 +383,10 @@
         .thumbnails img.active {
             border-color: #007bff;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
@@ -413,7 +417,8 @@
     <main>
         <div class="container">
             <h1>Our Achievements</h1>
-            <div class="achievement">
+
+            <div class="achievement" id="academic">
                 <h2>Academic Excellence</h2>
                 <div class="container2">
                     <div class="main-img-section">
@@ -438,7 +443,7 @@
                 <p>Our students have consistently ranked among the top performers in national examinations and
                     university placements.</p>
             </div>
-            <div class="achievement">
+            <div class="achievement" id="sports">
                 <h2>Sports Achievements</h2>
                 <div class="container2">
                     <div class="main-img-section">
@@ -463,7 +468,7 @@
                 <p>We have won numerous championships in various sports including football, basketball, and track and
                     field events.</p>
             </div>
-            <div class="achievement">
+            <div class="achievement" id="research">
                 <h2>Research Contributions</h2>
                 <div class="container2">
                     <div class="main-img-section">
@@ -488,7 +493,7 @@
                 <p>Our faculty and students have published groundbreaking research in renowned journals and have
                     presented at international conferences.</p>
             </div>
-            <div class="achievement">
+            <div class="achievement" id="community">
                 <h2>Community Service</h2>
                 <div class="container2">
                     <div class="main-img-section">
@@ -533,61 +538,81 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Modal functionality
             let modal = document.getElementById("myModal");
             let modalImg = document.querySelector(".modal-image");
-            let images = document.querySelectorAll(".achievement-img");
+            let images = document.querySelectorAll(".achievement-img, .thumbnails img");
             let currentIndex;
-            let imageList;
-
-            images.forEach((img, index) => {
-                img.addEventListener("click", function () {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                    currentIndex = index;
-                    imageList = Array.from(this.parentNode.querySelectorAll(".achievement-img"));
-                });
-            });
-
-            document.querySelector(".close").onclick = function () {
+            let imageList = Array.from(images);
+        
+            function openModal(index) {
+                modal.style.display = "block";
+                modalImg.src = images[index].src;
+                currentIndex = index;
+            }
+        
+            function closeModal() {
                 modal.style.display = "none";
-            };
-
-            document.querySelector(".prev").onclick = function () {
+            }
+        
+            function showPrev() {
                 currentIndex = (currentIndex === 0) ? imageList.length - 1 : currentIndex - 1;
                 modalImg.src = imageList[currentIndex].src;
-            };
-
-            document.querySelector(".next").onclick = function () {
+            }
+        
+            function showNext() {
                 currentIndex = (currentIndex === imageList.length - 1) ? 0 : currentIndex + 1;
                 modalImg.src = imageList[currentIndex].src;
-            };
-        });
-
-        const thumbnails = document.querySelectorAll('.thumbnails img');
-        const mainImg = document.getElementById('mainImage');
-        let currentImageIndex = 0;
-
-        function changeImage(index) {
-            mainImg.src = thumbnails[index].src;
-            thumbnails.forEach(t => t.classList.remove('active'));
-            thumbnails[index].classList.add('active');
-        }
-
-        function autoChangeImage() {
-            currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
-            changeImage(currentImageIndex);
-        }
-
-        changeImage(0);
-        setInterval(autoChangeImage, 4000);
-
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener('click', () => {
-                changeImage(index);
-                currentImageIndex = index;
+            }
+        
+            images.forEach((img, index) => {
+                img.addEventListener("click", () => openModal(index));
+            });
+        
+            document.querySelector(".close").onclick = closeModal;
+            document.querySelector(".prev").onclick = showPrev;
+            document.querySelector(".next").onclick = showNext;
+        
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeModal();
+                } else if (event.key === "ArrowLeft") {
+                    showPrev();
+                } else if (event.key === "ArrowRight") {
+                    showNext();
+                }
+            });
+            // Thumbnail functionality
+            const sections = document.querySelectorAll('.achievement');
+        
+            sections.forEach(section => {
+                const thumbnails = section.querySelectorAll('.thumbnails img');
+                const mainImg = section.querySelector('.main-img img');
+                let currentImageIndex = 0;
+        
+                function changeImage(index) {
+                    mainImg.src = thumbnails[index].src;
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumbnails[index].classList.add('active');
+                }
+        
+                function autoChangeImage() {
+                    currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
+                    changeImage(currentImageIndex);
+                }
+        
+                changeImage(0);
+                setInterval(autoChangeImage, 4000);
+        
+                thumbnails.forEach((thumbnail, index) => {
+                    thumbnail.addEventListener('click', () => {
+                        changeImage(index);
+                        currentImageIndex = index;
+                    });
+                });
             });
         });
-    </script>
+        </script>
 </body>
 
 </html>
