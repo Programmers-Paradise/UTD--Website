@@ -3,820 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B. Tech | Computer Science & Engineering</title>
-    <link rel="stylesheet" href="Btech.css">
+    <title>College Clubs</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #0c2035;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .club {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-width: 320px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .club img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 1rem;
+        }
+
+        .club:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .club h2 {
+            color: #007BFF;
+            margin-bottom: 0.75rem;
+        }
+
+        footer {
+            background-color: #0c2035;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 600px) {
+            .club {
+                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .club {
+                max-width: 30%;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header, section, footer {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-header {
-   
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 5px 5px;
-   background-color: #fff;
-   border-bottom: 1px solid #ccc;
-   
-}
-
-.logo {
-   display: flex;
-   align-items: center;
-   margin-left:10px;
-}
-.logo h3 {
-   font-size: medium;
-}
-
-.logo img {
-   width: 80px;
-   height: 70px;
-   margin-right: 10px;
-}
-/* Reset some default browser styles */
-ul {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-}
-
-/* Flexbox container for horizontal alignment */
-nav ul {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   margin: 0;
-   padding: 0;
-   background-color: #fff;
-   /* border-bottom: 1px solid #ccc; */
-}
-
-/* Style each list item */
-nav ul li {
-   position: relative;
-}
-
-/* Style for navigation links */
-nav ul li a {
-   display: block;
-   padding: 15px 40px;
-   text-decoration: none;
-   color: #000;
-   font-weight: bold;
-   transition: background-color 0.5s;
-}
-
-nav ul li a:hover {
-   background-color: #f9f9f9;
-}
-
-/* Dropdown container */
-.dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #f9f9f9;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
-   text-align: left;
-   transition: background-color 0.3s;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-   background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-   display: block;
-}
-
-/* Add some hover effects for main navigation links */
-nav ul li a::after {
-   content: '';
-   position: absolute;
-   width: 100%;
-   height: 2px;
-   background-color: #000;
-   bottom: -5px;
-   left: 0;
-   transform: scaleX(0);
-   transition: transform 0.5s ease;
-}
-
-nav ul li a:hover::after {
-   transform: scaleX(1);
-}
-
-.hero {
-    position: relative;
-    width: 100%;
-    max-width:  100%;
-    height: 500px;
-    overflow: hidden;
-   
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.hero:hover .hero-image {
-    transform: scale(1.05);
-    transition: transform 3s ease;
-}
-
-.hero-text {
-    position: absolute;
-    bottom: 60px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ece7e7;
-    padding: 20px;
-    border-radius: 5px;
-    
-    
-}
-
-.hero-text h4 {
-    margin: 0;
-    
-    color: #ffffff;
-}
-
-.hero-text p {
-    margin: 5px 0 0;
-    color: #fffcfc;
-}
-.header-image-container {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 20px auto; /* Adjust margin as needed */
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    animation: slideInRight 1s forwards; /* Animation declaration */
-}
-
-.header-image {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.header-image:hover {
-    transform: scale(1.015); /* Scale the image on hover */
-}
-
-/* Keyframes for sliding in from the right */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.course-info {
-    display: flex;
-    width: 100%;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 30px;
-    transition: transform 0.3s, background-color 0.3s;
-}
-.course-info:hover {
-    /* background-color: #e9e9e9e5; */
-    transform: scale(1.015);
-}
-
-.image-container {
-    flex: 1;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    /* transition: transform 0.3s ease; */
-}
-
-/* .image-container img:hover {
-    transform: scale(1.05);
-} */
-
-.course-details {
-    flex: 1;
-    padding: 20px;
-}
-
-.course-details h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.course-details p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.course-details p:first-of-type {
-    font-weight: bold;
-}
-
-
-.specializations {
-    text-align: center;
-    width: 100%;
-}
-
-.specializations h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.specialization-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.specialization {
-    width: 500px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: white;
-    transition: transform 0.3s ease;
-}
-
-.specialization img {
-    width: 100%;
-    height: 300px;
-}
-
-.specialization p {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.specialization:hover {
-    transform: scale(1.05);
-}
-
-.peos {
-    display: flex;
-    align-items: center;
-    background-color: #0c2035;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, background-color 0.3s;
-}
-.peos:hover {
-    /* background-color: #e9e9e9e5; */
-    transform: scale(1.015);
-}
-
-.peos-content {
-    flex: 1;
-    color: white;
-}
-
-.peos-content h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.peos-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.peos-content li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.peos-content .checkmark {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.peos-image {
-    flex: 1;
-    padding: 20px;
-}
-
-.peos-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.programme-outcome {
-    background-color: #0c3f75;
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, background-color 0.3s;
-}
-.programme-outcome:hover {
-    /* background-color: #e9e9e9e5; */
-    transform: scale(1.015);
-}
-
-
-.programme-outcome h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.programme-outcome ul {
-    list-style: none;
-    padding: 0;
-}
-
-.programme-outcome li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.programme-outcome li::before {
-    content: "✔";
-    margin-right: 10px;
-    color: white;
-    font-size: 24px;
-}
-.programme-sf {
-    background-color: #0c2035;
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.programme-sf h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.programme-sf ul {
-    list-style: none;
-    padding: 0;
-}
-
-.programme-sf li {
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.programme-sf li::before {
-    content: "✔";
-    margin-right: 10px;
-    color: white;
-    font-size: 24px;
-}
-
-.curriculum {
-    width: 100%;
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-.curriculum h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.year-buttons {
-   
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.year-buttons button {
-    background-color: #011731;
-    color: white;
-    border: solid;
-    padding: 7px 15px;
-    font-size: 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.year-buttons button:hover {
-    background-color: #0056b3;
-}
-
-.syllabus {
-    text-align: left;
-    margin-top: 30px;
-}
-
-.syllabus h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.syllabus h4 {
-    font-size: 24px;
-    margin-bottom: -70px;
-    text-align: center;
-}
-
-.semesters {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: -100px;
-}
-
-.syllabus ul {
-    list-style: none;
-    padding: 80px;
-}
-
-.syllabus li {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.download-btn {
-    background-color: #011731;
-    color: white;
-    border: solid;
-    padding: 5px 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.download-btn:hover {
-    background-color: #0056b3;
-}
-.scheme {
-    margin-top: 20px;
-    font-style: italic;
-}
-
-.eligibility-criteria {
-    width: 100%;
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-.eligibility-criteria h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.eligibility-criteria p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-.fee-structure {
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-.fee-structure h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.fee-table {
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow-x: auto; /* Enable horizontal scroll for smaller screens */
-    padding-bottom: 25px;
-}
-
-.fee-table table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.fee-table table th,
-.fee-table table td {
-    padding: 12px;
-    text-align: center;
-    border: 1.5px solid #ddd; /* Light gray border */
-}
-
-.fee-table table thead {
-    background-color: #011731; /* Dark blue background for table header */
-    color: white;
-}
-
-.fee-table table tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Alternate row background */
-}
-.view-btn {
-    background-color: #011731;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.view-btn:hover {
-    background-color: #0056b3;
-}
-
-.note {
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: bold;
-}
-.key-features {
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
-    transition: transform 0.3s, background-color 0.3s;
-}
-.key-features:hover {
-    /* background-color: #e9e9e9e5; */
-    transform: scale(1.015);
-}
-
-
-.key-features h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.key-features ul {
-    list-style:decimal;
-    padding: 0;
-}
-
-.key-features li {
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-footer {
-    background: #011731;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-footer .footer-links a {
-    margin: 0 10px;
-    color: #fff;
-}
-
-footer .footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer .social-media a img {
-    width: 30px;
-    margin: 0 10px;
-}
-
-footer p {
-    margin-top: 10px;
-}
-
-</style>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
-            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="add_ug.html">Admissions</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Faculty</a>
-                    <div class="dropdown-content">
-                        <a href="Btech_faculty.html">Btech's Faculties</a>
-                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
-                        <a href="PG_faculty.html">PG's Faculties</a>
-                    </div>
-                </li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="menu.html" id="menu-link">Menu</a></li>
-            </ul>
-        </nav>
+        <h1>College Clubs</h1>
     </header>
-    <div class="header-image-container">
-        <img src="images/BTech.png" alt="Image" class="header-image">
-        
-    </div>
     <main>
-        <section class="course-info">
-            <div class="image-container">
-                <img src="images/Btech.webp" alt="Laptop">
-            </div>
-            <div class="course-details">
-                <h3>B.Tech | Computer Science & Engineering</h3>
-                <p>DURATION : 4 YRS. (8 SEMESTERS)</p>
-                <p>
-                    The Department of Computer Science and Engineering offers B.Tech(Hons.) in Artificial Intelligence and Data Science for the students to grasp enriched knowledge in related industries driven curriculum. The major focus of this course is to nurture and sharpen students Technical skills with project based learning. Recurrent interactions with renowned experts of the fields and esteemed companies help the students to gain in-depth practical knowledge.
-                </p>
-                <p style="font-weight: bold;">University is commencing B.Tech (Honours) from 2020-21. The nomenclature of the degree are as follows:</p>
-                <ul>
-                    <li>B.Tech (Honours) in Computer Science Engineering (Artificial Intelligence) – 90 Seats</li>
-                    <li>B.Tech (Honours) in Computer Science Engineering (Data Science) – 90 Seats</li>
-                </ul>
-            </div>
-        </section>
-        <section class="specializations">
-            <h2>Specializations</h2>
-            <div class="specialization-container">
-                <div class="specialization">
-                    <img src="images/Data science.webp" alt="Specialization in Data Science">
-                    <p>Specialization in Data Science</p>
-                </div>
-                
-                <div class="specialization">
-                    <img src="images/AI.webp" alt="Specialization in AI & Machine Learning">
-                    <p>Specialization in Artificial Intelligence</p>
-                </div>
-            </div>
-        </section>
-        <section class="peos">
-            <div class="peos-content">
-                <h2>PROGRAMME EDUCATIONAL OBJECTIVES (PEOS)</h2>
-                <ul>
-                    <li>
-                        <span class="checkmark">✔</span>
-                        Preparedness to understand & adapt with the technological advances at global level.
-                    </li>
-                    <li>
-                        <span class="checkmark">✔</span>
-                        An ability to analyze a problem, and identify and define the computing requirements appropriate to its solution.
-                    </li>
-                    <li>
-                        <span class="checkmark">✔</span>
-                        To provide in-depth technical knowledge to design and develop solutions of real-world engineering problems.
-                    </li>
-                </ul>
-            </div>
-            <div class="peos-image">
-                <img src="images/Btech.webp" alt="Laptop">
-            </div>
-        </section>
-        <section class="programme-outcome">
-            <h2>PROGRAMME OUTCOME</h2>
-            <ul>
-                <li>Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
-                <li>Problem analysis: Identify, formulate, research literature, and analyse complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.</li>
-                <li>Design/Development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.</li>
-                <li>Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.</li>
-                <li>Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.</li>
-                <li>The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.</li>
-                <li>Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.</li>
-                <li>Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.</li>
-                <li>Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.</li>
-                <li>Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.</li>
-                <li>Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.</li>
-                <li>Competitive Skills: Ability to compete in national and international technical events and building the competitive spirit.</li>
-            </ul>
-        </section>
-        <section class="programme-sf">
-            <h2>Salient Features of Programme</h2>
-            <ul>
-                <li>Instil knowledge in the major areas of Computer Science and Engineering such as Artificial Intelligence, Networking, Data bases, Data Analytics, Web Development and Cloud Computing.</li>
-                <li>In addition to core curricula, course offers subjects like communication, analytical and soft skills to enhance personality and employability.</li>
-                <li>Trainings, projects and guest lectures collaborated with industries help to learn from real life situations.</li>
-                <li>Seminar and Project driven courses are designed to enhance technical and presentation skills.</li>
-                <li>Industrial visits encourage students to have maximum industrial exposure through visits for problem identification and emerging technologies.</li>
-                <li>Minor elective gives the students a choice to develop expertise in the interdisciplinary areas of interest for example Management and ECE.</li>
-                <li>Curriculum is equipped with 21st century digital technologies for web designing, networking, mobile phone app development, data analytics, and data bases.</li>
-                <li>Curriculum of the course is competent to impart skills as benchmarked by Wipro Talent++, Infosys Campus Connect, HCL K2 with option to undergo Industrial Certifications and Online Courses.</li>
-                <li>Curriculum of the course is competent to impart skills as per feedback provided by premier organizations of industry and academia.</li>
-                <li>Usage of demo kits in addition to animations, simulations, audio-visual aids, demonstrations provide interactive teaching methodology.</li>
-                <li>Participation in technical events, sports and cultural activities help in the holistic development of students.</li>
-            </ul>
-        </section>
-        <footer>
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                </div>
-                <div class="social-media">
-                    <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
-                    <br>
-                    <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
-                    <br>
-                    <a href="#"><img src="images/mail.png" alt="Mail"></a>
-                </div>
-            </div>
-            <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
-            <p>Contact us at enquiry@csvtu.ac.in</p>
-        </footer>
-    
+        <div class="club" id="club1">
+            <img src="images/admin_building.jpg" alt="Music Club">
+            <h2>Music Club</h2>
+            <p>The Music Club is a place for all music lovers to come together and share their passion for music.</p>
+        </div>
+        <div class="club" id="club2">
+            <img src="images/dance-club.jpg" alt="Dance Club">
+            <h2>Dance Club</h2>
+            <p>The Dance Club welcomes everyone who loves to dance, regardless of skill level.</p>
+        </div>
+        <div class="club" id="club3">
+            <img src="images/robotics-club.jpg" alt="Robotics Club">
+            <h2>Robotics Club</h2>
+            <p>Join the Robotics Club to work on exciting projects and learn about the latest in robotics technology.</p>
+        </div>
+        <!-- Add more clubs as needed -->
     </main>
+    <footer>
+        <p>&copy; 2024 College Name. All rights reserved.</p>
+    </footer>
     <script>
-        function showSyllabus(year) {
-    const years = ['first-year', 'second-year', 'third-year', 'fourth-year'];
-    years.forEach(y => {
-        document.getElementById(y).style.display = 'none';
-    });
-    document.getElementById(year).style.display = 'block';
-}
-
-// Display the first year syllabus by default
-document.addEventListener('DOMContentLoaded', (event) => {
-    showSyllabus('first-year');
-});
-function toggleFeeTable() {
-    var secondSemesterFees = document.getElementById("second-semester-fees");
-    if (secondSemesterFees.style.display === "none") {
-        secondSemesterFees.style.display = "block";
-    } else {
-        secondSemesterFees.style.display = "none";
-    }
-}
-
+        document.addEventListener('DOMContentLoaded', () => {
+            // Example: Display club details when a club is clicked
+            document.querySelectorAll('.club').forEach(club => {
+                club.addEventListener('click', () => {
+                    const clubName = club.querySelector('h2').innerText;
+                    alert(`You clicked on ${clubName}`);
+                });
+            });
+        });
     </script>
 </body>
 </html>
