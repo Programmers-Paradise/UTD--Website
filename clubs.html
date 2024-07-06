@@ -4,101 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Clubs</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #0c2035;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .club {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-width: 320px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .club img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 1rem;
+        }
+
+        .club:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .club h2 {
+            color: #007BFF;
+            margin-bottom: 0.75rem;
+        }
+
+        footer {
+            background-color: #0c2035;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 600px) {
+            .club {
+                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .club {
+                max-width: 30%;
+            }
+        }
+    </style>
 </head>
-<style>
-    * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f0f4f8;
-    color: #333;
-}
-
-header {
-    background-color: #0c2035;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-main {
-    flex: 1;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.club {
-    background-color: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    max-width: 320px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.club:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.club h2 {
-    color: #007BFF;
-    margin-bottom: 0.75rem;
-}
-
-footer {
-    background-color:#0c2035;/* #007BFF;*/
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 600px) {
-    .club {
-        max-width: 45%;
-    }
-}
-
-@media (min-width: 900px) {
-    .club {
-        max-width: 30%;
-    }
-}
-
-</style>
 <body>
     <header>
         <h1>College Clubs</h1>
     </header>
     <main>
         <div class="club" id="club1">
+            <img src="images/admin_building.jpg" alt="Music Club">
             <h2>Music Club</h2>
             <p>The Music Club is a place for all music lovers to come together and share their passion for music.</p>
-            <img src="images/future1.jpg" alt="">
         </div>
         <div class="club" id="club2">
+            <img src="images/dance-club.jpg" alt="Dance Club">
             <h2>Dance Club</h2>
             <p>The Dance Club welcomes everyone who loves to dance, regardless of skill level.</p>
         </div>
         <div class="club" id="club3">
+            <img src="images/robotics-club.jpg" alt="Robotics Club">
             <h2>Robotics Club</h2>
             <p>Join the Robotics Club to work on exciting projects and learn about the latest in robotics technology.</p>
         </div>
@@ -107,15 +115,16 @@ footer {
     <footer>
         <p>&copy; 2024 College Name. All rights reserved.</p>
     </footer>
-    <script >document.addEventListener('DOMContentLoaded', () => {
-        // Example: Display club details when a club is clicked
-        document.querySelectorAll('.club').forEach(club => {
-            club.addEventListener('click', () => {
-                const clubName = club.querySelector('h2').innerText;
-                alert(`You clicked on ${clubName}`);
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Example: Display club details when a club is clicked
+            document.querySelectorAll('.club').forEach(club => {
+                club.addEventListener('click', () => {
+                    const clubName = club.querySelector('h2').innerText;
+                    alert(`You clicked on ${clubName}`);
+                });
             });
         });
-    });
     </script>
 </body>
 </html>
