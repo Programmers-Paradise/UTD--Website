@@ -780,3 +780,131 @@ button {
 button:hover {
     background-color: #00509e;
 }
+
+
+/* Cards */
+
+.popup {
+    position:  fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 9999;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #110b0b;
+    margin: 10% auto;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 20em;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+#closeButton {
+    color: #fff;
+    background-color: #888;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+#myButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Card Styles */
+.card {
+    width: 20em;
+    height: 28em;
+    background: blanchedalmond;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.card span {
+    font-weight: bold;
+    color: rgb(6, 5, 5);
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+}
+
+.card .info {
+    font-weight: 400;
+    color: rgb(7, 6, 6);
+    display: block;
+    text-align: left;
+    font-size: 0.8em;
+    margin: 0.5em;
+    text-align: justify;
+}
+
+.card .img {
+    width: 16em;
+    height: 16em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .share {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.card .share a {
+    color: rgb(16, 16, 16);
+    transition: .4s ease-in-out;
+}
+
+.card .share a:hover {
+    color: blue;
+}
+
+.card .share svg {
+    width: 26px;
+    height: 26px;
+}
+
+.card a {
+    color: rgb(16, 16, 16);
+    transition: .4s ease-in-out;
+}
+
+.card a:hover {
+    color: blue;
+}
