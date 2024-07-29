@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <div id="alertNotice" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img src="Banners/admission_banner.png" alt="Banner Image" style="width: 80%; height: auto;">
+    </div>
     <header>
         <div class="logo">
             <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
@@ -563,6 +567,16 @@
                 }
             });
         });
+        function closePopup() {
+    var popup = document.getElementById('alertNotice');
+    popup.style.display = 'none';
+}
+
+// Optional: Show the popup initially
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('alertNotice');
+    popup.style.display = 'block'; // Display the popup initially
+});
 
     </script>
 </body>
