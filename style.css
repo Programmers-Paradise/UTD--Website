@@ -23,6 +23,33 @@ header {
     
 }
 
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to bottom */
+    left: 0;
+    right: 0;
+    background-color: #333; /* Background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    text-align: center; /* Center text */
+    z-index: 999; /* Ensure it stays on top */
+}
+
+/* Close button */
+.popup .close {
+    color: white;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Make the close button red on hover */
+.popup .close:hover {
+    color: red;
+}
+
 .logo {
     display: flex;
     align-items: center;
