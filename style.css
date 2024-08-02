@@ -273,7 +273,7 @@ section {
 
 @media (max-width: 390px) {
     .hero {
-        width: 260px;
+        width: 380px;
         height: 180px;
         margin-top: 0%;
     }
@@ -304,7 +304,7 @@ section {
 
     .welcome-section {
         padding: 15px 5px;
-        width: 260px;
+        width: 380px;
         height: 130px;
        
     }
@@ -391,7 +391,7 @@ section {
     .quick-links {
         margin-top: -30px;
         padding: 5px;
-        width: 260px;
+        width: 380px;
       
     }
 
@@ -476,7 +476,7 @@ section {
 @media (max-width: 390px) {
     .vision {
         padding: 20px;
-        width: 260px;
+        width: 380px;
         height: auto;
         text-align: center;
     }
@@ -614,7 +614,7 @@ section {
 
 @media (max-width: 390px) {
     .Departments {
-        width: 260px;
+        width: 380px;
         height: auto;
         margin-bottom: 0px;
     }
@@ -784,7 +784,7 @@ section {
 @media (max-width: 390px) {
     .Forte {
         padding: 20px;
-        width: 260px;
+        width: 380px;
         height: auto;
         text-align: center;
     }
