@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="content">
     <div id="alertNotice" class="popup">
         <span class="close" onclick="closePopup()">&times;</span>
         <img src="Banners/admission_banner.png" alt="Banner Image" style="width: 80%; height: auto;">
@@ -543,7 +544,11 @@
         </div>
         <button id="closeButton">Close</button>
     </div>
-
+</div>
+<div id="mobile-message" style="display: none;">
+    <p>This website is best viewed on a desktop. Please visit us on a desktop computer.</p>
+    <button id="switch-mode">Switch to Desktop Mode</button>
+</div>
 
     <script src="script.js"></script>
     <script>
@@ -576,6 +581,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('alertNotice');
     popup.style.display = 'block'; // Display the popup initially
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth < 768) {
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('mobile-message').style.display = 'block';
+    }
+
+    document.getElementById('switch-mode').addEventListener('click', function() {
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1024'); // or set to a desktop width you prefer
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('mobile-message').style.display = 'none';
+    });
 });
 
     </script>
