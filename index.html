@@ -546,8 +546,7 @@
     </div>
 </div>
 <div id="mobile-message" style="display: none;">
-    <p>This website is best viewed on a desktop. Please visit us on a desktop computer.</p>
-    <button id="switch-mode">Switch to Desktop Mode</button>
+    <p>This website is best viewed on a desktop. Please switch to desktop mode for a better experience.</p>
 </div>
 
     <script src="script.js"></script>
@@ -588,12 +587,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('content').style.display = 'none';
         document.getElementById('mobile-message').style.display = 'block';
     }
-
-    document.getElementById('switch-mode').addEventListener('click', function() {
-        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1024'); // or set to a desktop width you prefer
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('mobile-message').style.display = 'none';
-    });
 });
 
     </script>
